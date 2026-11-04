@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Оборудование SoundSpace — учебный сайт музыкальной студии. Звукозапись, репетиции, подкасты и музыкальный продакшен.">
+    <meta name="theme-color" content="#101013">
+    <title>Оборудование — SoundSpace</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.js" defer></script>
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg" aria-label="Главная навигация">
+        <div class="container">
+          <a class="navbar-brand" href="index.html" aria-label="SoundSpace — главная"><svg class="icon brand-mark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4M7 5v14M11 2v20M15 7v10M19 4v16M23 10v4"/></svg>SOUNDSPACE<span class="accent" aria-hidden="true">.</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link "  href="index.html">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="studios.html">Студии</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="services.html">Услуги и цены</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="equipment.html">Оборудование</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="portfolio.html">Портфолио</a>
+              </li>
+            </ul>
+            <a class="btn btn-outline-light nav-book" href="studios.html#studios">Забронировать <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="page-heading">
+        <div class="container">
+          <nav aria-label="Хлебные крошки">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="index.html">Главная</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Инструменты твоего звука
+              </li>
+            </ol>
+          </nav>
+          <div class="row align-items-end">
+            <div class="col-lg-9">
+              <div class="eyebrow">
+                SoundSpace / Оборудование
+              </div>
+              <h1>
+                Инструменты твоего звука
+              </h1>
+              <p class="page-intro">
+                От первого сигнала до финального прослушивания. Познакомьтесь с комплектацией студии и найдите нужное оборудование.
+              </p>
+            </div>
+            <div class="col-lg-3 text-end d-none d-lg-block">
+              <div class="page-count">
+                10<span>устройств</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pb-5">
+        <div class="container">
+          <h2 class="visually-hidden">
+            Каталог оборудования
+          </h2>
+          <div class="equipment-toolbar">
+            <span class="result-count" id="equipment-count" role="status">Найдено устройств: 10</span>
+            <div class="search-box">
+              <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><label for="equipment-search" class="visually-hidden">Поиск оборудования</label><input class="form-control" type="search" id="equipment-search" placeholder="Найти оборудование…" autocomplete="off">
+            </div>
+          </div>
+          <ul class="nav nav-tabs" id="equipment-tabs" role="tablist" aria-label="Категории оборудования">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="gear-tab-all" data-bs-toggle="tab" data-bs-target="#gear-pane-all" type="button" role="tab" aria-controls="gear-pane-all" aria-selected="true">Всё оборудование</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link " id="gear-tab-microphones" data-bs-toggle="tab" data-bs-target="#gear-pane-microphones" type="button" role="tab" aria-controls="gear-pane-microphones" aria-selected="false">Микрофоны</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link " id="gear-tab-interfaces" data-bs-toggle="tab" data-bs-target="#gear-pane-interfaces" type="button" role="tab" aria-controls="gear-pane-interfaces" aria-selected="false">Аудиоинтерфейсы</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link " id="gear-tab-monitors" data-bs-toggle="tab" data-bs-target="#gear-pane-monitors" type="button" role="tab" aria-controls="gear-pane-monitors" aria-selected="false">Мониторы</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link " id="gear-tab-mixers" data-bs-toggle="tab" data-bs-target="#gear-pane-mixers" type="button" role="tab" aria-controls="gear-pane-mixers" aria-selected="false">Микшеры</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link " id="gear-tab-instruments" data-bs-toggle="tab" data-bs-target="#gear-pane-instruments" type="button" role="tab" aria-controls="gear-pane-instruments" aria-selected="false">Инструменты</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="equipment-content">
+            <div class="tab-pane fade show active" id="gear-pane-all" role="tabpanel" aria-labelledby="gear-tab-all" tabindex="0">
+              <div class="row g-4">
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="конденсаторный микрофон микрофоны детальная передача вокала и акустических инструментов. большая мембрана и кардиоидная направленность.">
+                  <article class="card gear-card">
+                    <img src="assets/images/microphone.jpg" alt="Конденсаторный микрофон: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Микрофоны</span>
+                      <h3>
+                        Конденсаторный микрофон
+                      </h3>
+                      <p>
+                        Детальная передача вокала и акустических инструментов. Большая мембрана и кардиоидная направленность.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="condenser" aria-label="Подробнее: Конденсаторный микрофон">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="динамический микрофон микрофоны для громкого вокала, репетиций и гитарных усилителей. устойчив к высоким уровням звука.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-c.jpg" alt="Динамический микрофон: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Микрофоны</span>
+                      <h3>
+                        Динамический микрофон
+                      </h3>
+                      <p>
+                        Для громкого вокала, репетиций и гитарных усилителей. Устойчив к высоким уровням звука.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="dynamic" aria-label="Подробнее: Динамический микрофон">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="аудиоинтерфейс · 2 канала аудиоинтерфейсы компактное решение для сольных сессий. два входа для микрофона или инструмента и прямой мониторинг.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-b.jpg" alt="Аудиоинтерфейс · 2 канала: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Аудиоинтерфейсы</span>
+                      <h3>
+                        Аудиоинтерфейс · 2 канала
+                      </h3>
+                      <p>
+                        Компактное решение для сольных сессий. Два входа для микрофона или инструмента и прямой мониторинг.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="interface2" aria-label="Подробнее: Аудиоинтерфейс · 2 канала">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="аудиоинтерфейс · 8 каналов аудиоинтерфейсы многоканальная запись группы с раздельными дорожками. микрофонные предусилители и выходы для мониторинга.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-a.jpg" alt="Аудиоинтерфейс · 8 каналов: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Аудиоинтерфейсы</span>
+                      <h3>
+                        Аудиоинтерфейс · 8 каналов
+                      </h3>
+                      <p>
+                        Многоканальная запись группы с раздельными дорожками. Микрофонные предусилители и выходы для мониторинга.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="interface8" aria-label="Подробнее: Аудиоинтерфейс · 8 каналов">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="мониторы ближнего поля мониторы активная стереопара для контроля баланса и пространства. используется при записи и сведении.">
+                  <article class="card gear-card">
+                    <img src="assets/images/monitors.jpg" alt="Мониторы ближнего поля: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Мониторы</span>
+                      <h3>
+                        Мониторы ближнего поля
+                      </h3>
+                      <p>
+                        Активная стереопара для контроля баланса и пространства. Используется при записи и сведении.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="nearfield" aria-label="Подробнее: Мониторы ближнего поля">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="студийные наушники мониторы закрытая конструкция для записи вокала без утечки фонограммы в микрофон. индивидуальный мониторинг.">
+                  <article class="card gear-card">
+                    <img src="assets/images/headphones.jpg" alt="Студийные наушники: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Мониторы</span>
+                      <h3>
+                        Студийные наушники
+                      </h3>
+                      <p>
+                        Закрытая конструкция для записи вокала без утечки фонограммы в микрофон. Индивидуальный мониторинг.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="headphones" aria-label="Подробнее: Студийные наушники">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="аналоговый микшер микшеры управление уровнями на репетиции. микрофонные входы, эквализация и отдельный выход на наушники.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-b.jpg" alt="Аналоговый микшер: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Микшеры</span>
+                      <h3>
+                        Аналоговый микшер
+                      </h3>
+                      <p>
+                        Управление уровнями на репетиции. Микрофонные входы, эквализация и отдельный выход на наушники.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="analog" aria-label="Подробнее: Аналоговый микшер">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="цифровой микшер микшеры гибкая маршрутизация сигнала и сохранение настроек сессии. для записи и работы с несколькими исполнителями.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-a.jpg" alt="Цифровой микшер: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Микшеры</span>
+                      <h3>
+                        Цифровой микшер
+                      </h3>
+                      <p>
+                        Гибкая маршрутизация сигнала и сохранение настроек сессии. Для записи и работы с несколькими исполнителями.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="digital" aria-label="Подробнее: Цифровой микшер">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="акустическое фортепиано инструменты живой инструмент для камерной записи и акустических проектов. доступен в студии e.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-e.jpg" alt="Акустическое фортепиано: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Инструменты</span>
+                      <h3>
+                        Акустическое фортепиано
+                      </h3>
+                      <p>
+                        Живой инструмент для камерной записи и акустических проектов. Доступен в студии E.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="piano" aria-label="Подробнее: Акустическое фортепиано">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="электрогитара инструменты для репетиций и поиска новых партий. подключается к комбоусилителю или инструментальному входу.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-f.jpg" alt="Электрогитара: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Инструменты</span>
+                      <h3>
+                        Электрогитара
+                      </h3>
+                      <p>
+                        Для репетиций и поиска новых партий. Подключается к комбоусилителю или инструментальному входу.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="guitar" aria-label="Подробнее: Электрогитара">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade " id="gear-pane-microphones" role="tabpanel" aria-labelledby="gear-tab-microphones" tabindex="0">
+              <div class="row g-4">
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="конденсаторный микрофон микрофоны детальная передача вокала и акустических инструментов. большая мембрана и кардиоидная направленность.">
+                  <article class="card gear-card">
+                    <img src="assets/images/microphone.jpg" alt="Конденсаторный микрофон: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Микрофоны</span>
+                      <h3>
+                        Конденсаторный микрофон
+                      </h3>
+                      <p>
+                        Детальная передача вокала и акустических инструментов. Большая мембрана и кардиоидная направленность.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="condenser" aria-label="Подробнее: Конденсаторный микрофон">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="динамический микрофон микрофоны для громкого вокала, репетиций и гитарных усилителей. устойчив к высоким уровням звука.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-c.jpg" alt="Динамический микрофон: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Микрофоны</span>
+                      <h3>
+                        Динамический микрофон
+                      </h3>
+                      <p>
+                        Для громкого вокала, репетиций и гитарных усилителей. Устойчив к высоким уровням звука.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="dynamic" aria-label="Подробнее: Динамический микрофон">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade " id="gear-pane-interfaces" role="tabpanel" aria-labelledby="gear-tab-interfaces" tabindex="0">
+              <div class="row g-4">
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="аудиоинтерфейс · 2 канала аудиоинтерфейсы компактное решение для сольных сессий. два входа для микрофона или инструмента и прямой мониторинг.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-b.jpg" alt="Аудиоинтерфейс · 2 канала: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Аудиоинтерфейсы</span>
+                      <h3>
+                        Аудиоинтерфейс · 2 канала
+                      </h3>
+                      <p>
+                        Компактное решение для сольных сессий. Два входа для микрофона или инструмента и прямой мониторинг.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="interface2" aria-label="Подробнее: Аудиоинтерфейс · 2 канала">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="аудиоинтерфейс · 8 каналов аудиоинтерфейсы многоканальная запись группы с раздельными дорожками. микрофонные предусилители и выходы для мониторинга.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-a.jpg" alt="Аудиоинтерфейс · 8 каналов: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Аудиоинтерфейсы</span>
+                      <h3>
+                        Аудиоинтерфейс · 8 каналов
+                      </h3>
+                      <p>
+                        Многоканальная запись группы с раздельными дорожками. Микрофонные предусилители и выходы для мониторинга.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="interface8" aria-label="Подробнее: Аудиоинтерфейс · 8 каналов">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade " id="gear-pane-monitors" role="tabpanel" aria-labelledby="gear-tab-monitors" tabindex="0">
+              <div class="row g-4">
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="мониторы ближнего поля мониторы активная стереопара для контроля баланса и пространства. используется при записи и сведении.">
+                  <article class="card gear-card">
+                    <img src="assets/images/monitors.jpg" alt="Мониторы ближнего поля: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Мониторы</span>
+                      <h3>
+                        Мониторы ближнего поля
+                      </h3>
+                      <p>
+                        Активная стереопара для контроля баланса и пространства. Используется при записи и сведении.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="nearfield" aria-label="Подробнее: Мониторы ближнего поля">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="студийные наушники мониторы закрытая конструкция для записи вокала без утечки фонограммы в микрофон. индивидуальный мониторинг.">
+                  <article class="card gear-card">
+                    <img src="assets/images/headphones.jpg" alt="Студийные наушники: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Мониторы</span>
+                      <h3>
+                        Студийные наушники
+                      </h3>
+                      <p>
+                        Закрытая конструкция для записи вокала без утечки фонограммы в микрофон. Индивидуальный мониторинг.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="headphones" aria-label="Подробнее: Студийные наушники">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade " id="gear-pane-mixers" role="tabpanel" aria-labelledby="gear-tab-mixers" tabindex="0">
+              <div class="row g-4">
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="аналоговый микшер микшеры управление уровнями на репетиции. микрофонные входы, эквализация и отдельный выход на наушники.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-b.jpg" alt="Аналоговый микшер: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Микшеры</span>
+                      <h3>
+                        Аналоговый микшер
+                      </h3>
+                      <p>
+                        Управление уровнями на репетиции. Микрофонные входы, эквализация и отдельный выход на наушники.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="analog" aria-label="Подробнее: Аналоговый микшер">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="цифровой микшер микшеры гибкая маршрутизация сигнала и сохранение настроек сессии. для записи и работы с несколькими исполнителями.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-a.jpg" alt="Цифровой микшер: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Микшеры</span>
+                      <h3>
+                        Цифровой микшер
+                      </h3>
+                      <p>
+                        Гибкая маршрутизация сигнала и сохранение настроек сессии. Для записи и работы с несколькими исполнителями.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="digital" aria-label="Подробнее: Цифровой микшер">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade " id="gear-pane-instruments" role="tabpanel" aria-labelledby="gear-tab-instruments" tabindex="0">
+              <div class="row g-4">
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="акустическое фортепиано инструменты живой инструмент для камерной записи и акустических проектов. доступен в студии e.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-e.jpg" alt="Акустическое фортепиано: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Инструменты</span>
+                      <h3>
+                        Акустическое фортепиано
+                      </h3>
+                      <p>
+                        Живой инструмент для камерной записи и акустических проектов. Доступен в студии E.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="piano" aria-label="Подробнее: Акустическое фортепиано">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-md-6 col-xl-4 equipment-item" data-search="электрогитара инструменты для репетиций и поиска новых партий. подключается к комбоусилителю или инструментальному входу.">
+                  <article class="card gear-card">
+                    <img src="assets/images/studio-f.jpg" alt="Электрогитара: иллюстрация категории" width="800" height="533" loading="lazy">
+                    <div class="gear-body">
+                      <span class="gear-category">Инструменты</span>
+                      <h3>
+                        Электрогитара
+                      </h3>
+                      <p>
+                        Для репетиций и поиска новых партий. Подключается к комбоусилителю или инструментальному входу.
+                      </p>
+                      <button class="arrow-link btn-detail" type="button" data-bs-toggle="modal" data-bs-target="#equipment-modal" data-gear="guitar" aria-label="Подробнее: Электрогитара">Характеристики <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="empty-state" id="equipment-empty" hidden>
+            <h3>
+              Ничего не найдено
+            </h3>
+            <p>
+              Попробуйте другое название или категорию.
+            </p>
+            <button class="btn btn-outline-light" type="button" id="reset-equipment">Сбросить поиск</button>
+          </div>
+          <p class="demo-note">
+            Пример комплектации для учебного сайта. Характеристики обобщены, фотографии иллюстрируют категории и не являются точными изображениями моделей.
+          </p>
+          <div class="help-strip">
+            <div>
+              <h3>
+                Оборудование уже в студии
+              </h3>
+              <p>
+                Базовая комплектация включена в стоимость аренды. Выберите помещение под вашу задачу.
+              </p>
+            </div>
+            <a class="btn btn-primary" href="studios.html">Выбрать студию <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a class="navbar-brand" href="index.html" aria-label="SoundSpace — главная"><svg class="icon brand-mark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4M7 5v14M11 2v20M15 7v10M19 4v16M23 10v4"/></svg>SOUNDSPACE<span class="accent" aria-hidden="true">.</span></a>
+            <p class="footer-description">
+              Пространство, в котором идеи<br>обретают своё звучание.
+            </p>
+          </div>
+          <nav class="footer-nav" aria-label="Навигация в подвале">
+            <a href="studios.html">Студии</a><a href="services.html">Услуги и цены</a><a href="equipment.html">Оборудование</a><a href="portfolio.html">Портфолио</a>
+          </nav>
+          <p class="footer-note">
+            Учебный проект. Бронирования и заявки демонстрационные.
+          </p>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 SoundSpace. Музыкальная студия.</span><span>Пчелкин Алексей · ЭФБО-11-25</span><a class="muted" href="#main">Наверх ↑</a>
+        </div>
+      </div>
+    </footer>
+    <div class="modal fade" id="equipment-modal" tabindex="-1" aria-labelledby="equipment-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="equipment-title">
+              Оборудование
+            </h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <img class="equipment-modal-image" id="equipment-image" src="assets/images/microphone.jpg" alt=""><span class="gear-category" id="equipment-category"></span>
+            <p id="equipment-description" class="mt-3 mb-0">
+            </p>
+            <dl class="gear-specs" id="equipment-specs">
+            </dl>
+            <p class="form-text">
+              Иллюстрация категории оборудования. Демонстрационные характеристики.
+            </p>
+            <a class="btn btn-primary w-100" href="studios.html">Посмотреть студии →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <noscript>
+    <p class="container demo-note">
+      Включите JavaScript для работы фильтров, вкладок, каруселей, форм и модальных окон.
+    </p>
+    </noscript>
+  </body>
+</html>

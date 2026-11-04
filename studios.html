@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Студии SoundSpace — учебный сайт музыкальной студии. Звукозапись, репетиции, подкасты и музыкальный продакшен.">
+    <meta name="theme-color" content="#101013">
+    <title>Студии — SoundSpace</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.js" defer></script>
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg" aria-label="Главная навигация">
+        <div class="container">
+          <a class="navbar-brand" href="index.html" aria-label="SoundSpace — главная"><svg class="icon brand-mark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4M7 5v14M11 2v20M15 7v10M19 4v16M23 10v4"/></svg>SOUNDSPACE<span class="accent" aria-hidden="true">.</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link "  href="index.html">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="studios.html">Студии</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="services.html">Услуги и цены</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="equipment.html">Оборудование</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="portfolio.html">Портфолио</a>
+              </li>
+            </ul>
+            <a class="btn btn-outline-light nav-book" href="studios.html#studios">Забронировать <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="page-heading">
+        <div class="container">
+          <nav aria-label="Хлебные крошки">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="index.html">Главная</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Найди своё пространство
+              </li>
+            </ol>
+          </nav>
+          <div class="row align-items-end">
+            <div class="col-lg-9">
+              <div class="eyebrow">
+                SoundSpace / Студии
+              </div>
+              <h1>
+                Найди своё пространство
+              </h1>
+              <p class="page-intro">
+                Для первого дубля, громкой репетиции или тихого разговора. Шесть студий — шесть способов быть услышанным.
+              </p>
+            </div>
+            <div class="col-lg-3 text-end d-none d-lg-block">
+              <div class="page-count">
+                06<span>пространств</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pb-5" id="studios">
+        <div class="container">
+          <h2 class="visually-hidden">
+            Каталог студий
+          </h2>
+          <div class="filter-bar">
+            <span class="result-count" id="studio-count" role="status">Найдено студий: 6</span><button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#studio-filters" aria-expanded="true" aria-controls="studio-filters"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg>Фильтры</button>
+          </div>
+          <div class="collapse show" id="studio-filters">
+            <form class="filter-panel" id="studio-filter-form">
+              <div class="row g-4 align-items-end">
+                <div class="col-md-5">
+                  <label for="purpose-filter" class="form-label">Назначение студии</label><select id="purpose-filter" class="form-select"><option value="all">Все направления</option><option value="recording">Звукозапись</option><option value="rehearsal">Репетиции</option><option value="podcast">Подкасты</option><option value="production">Продакшен</option></select>
+                </div>
+                <div class="col-md-5">
+                  <label for="price-filter" class="form-label">До <output id="price-output" for="price-filter">1 800</output> ₽ / час</label><input class="form-range" type="range" id="price-filter" min="700" max="1800" step="100" value="1800" aria-label="Максимальная цена аренды за час">
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-outline-light btn-sm w-100" type="reset">Сбросить</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="row g-4" id="studio-grid">
+            <div class="col-md-6 col-xl-4 studio-item" data-purpose="recording" data-price="1800">
+              <article class="card room-card">
+                <div class="room-image-wrap">
+                  <img class="room-image" src="assets/images/studio-a.jpg" alt="Интерьер: Студия А · Звукозапись" width="800" height="533" loading="lazy"><span class="room-tag">Звукозапись</span><span class="room-number">01</span>
+                </div>
+                <div class="room-body">
+                  <h2>
+                    Студия А · Звукозапись
+                  </h2>
+                  <div class="room-meta">
+                    <span><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 12h10m-5-5v10"/></svg>35 м²</span><span><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 21v-3a7 7 0 0 1 14 0v3M16 4a3 3 0 0 1 0 6M22 21v-3a7 7 0 0 0-5-6"/></svg>До 5 чел.</span>
+                  </div>
+                  <p class="room-description">
+                    Контрольная комната и отдельная вокальная кабина. Для вокала, инструментов и записи с группой.
+                  </p>
+                  <ul class="room-features" aria-label="Оснащение">
+                    <li>
+                      Вокальная кабина
+                    </li>
+                    <li>
+                      Мониторы ближнего поля
+                    </li>
+                    <li>
+                      Аудиоинтерфейс
+                    </li>
+                  </ul>
+                  <div class="room-book">
+                    <div>
+                      <strong>1 800 ₽</strong> <small>/ час</small>
+                    </div>
+                    <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#booking-modal" data-studio="a" aria-label="Забронировать: Студия А · Звукозапись">Бронировать <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4 studio-item" data-purpose="production" data-price="1400">
+              <article class="card room-card">
+                <div class="room-image-wrap">
+                  <img class="room-image" src="assets/images/studio-b.jpg" alt="Интерьер: Студия B · Продакшен" width="800" height="533" loading="lazy"><span class="room-tag">Продакшен</span><span class="room-number">02</span>
+                </div>
+                <div class="room-body">
+                  <h2>
+                    Студия B · Продакшен
+                  </h2>
+                  <div class="room-meta">
+                    <span><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 12h10m-5-5v10"/></svg>22 м²</span><span><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 21v-3a7 7 0 0 1 14 0v3M16 4a3 3 0 0 1 0 6M22 21v-3a7 7 0 0 0-5-6"/></svg>До 3 чел.</span>
+                  </div>
+                  <p class="room-description">
+                    Сосредоточенная работа над аранжировкой, сведением и новым звучанием вашего проекта.
+                  </p>
+                  <ul class="room-features" aria-label="Оснащение">
+                    <li>
+                      MIDI-клавиатура
+                    </li>
+                    <li>
+                      Мониторинг
+                    </li>
+                    <li>
+                      Рабочая станция
+                    </li>
+                  </ul>
+                  <div class="room-book">
+                    <div>
+                      <strong>1 400 ₽</strong> <small>/ час</small>
+                    </div>
+                    <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#booking-modal" data-studio="b" aria-label="Забронировать: Студия B · Продакшен">Бронировать <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4 studio-item" data-purpose="podcast" data-price="1000">
+              <article class="card room-card">
+                <div class="room-image-wrap">
+                  <img class="room-image" src="assets/images/studio-c.jpg" alt="Интерьер: Студия C · Подкасты" width="800" height="533" loading="lazy"><span class="room-tag">Подкасты</span><span class="room-number">03</span>
+                </div>
+                <div class="room-body">
+                  <h2>
+                    Студия C · Подкасты
+                  </h2>
+                  <div class="room-meta">
+                    <span><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 12h10m-5-5v10"/></svg>18 м²</span><span><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 21v-3a7 7 0 0 1 14 0v3M16 4a3 3 0 0 1 0 6M22 21v-3a7 7 0 0 0-5-6"/></svg>До 4 чел.</span>
+                  </div>
+                  <p class="room-description">
+                    Тихая комната для интервью, разговорных шоу и озвучки. Чистый голос без лишних отвлечений.
+                  </p>
+                  <ul class="room-features" aria-label="Оснащение">
+                    <li>
+                      4 микрофона
+                    </li>
+                    <li>
+                      Наушники
+                    </li>
+                    <li>
+                      Звукоизоляция
+                    </li>
+                  </ul>
+                  <div class="room-book">
+                    <div>
+                      <strong>1 000 ₽</strong> <small>/ час</small>
+                    </div>
+                    <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#booking-modal" data-studio="c" aria-label="Забронировать: Студия C · Подкасты">Бронировать <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4 studio-item" data-purpose="rehearsal" data-price="1200">
+              <article class="card room-card">
+                <div class="room-image-wrap">
+                  <img class="room-image" src="assets/images/studio-d.jpg" alt="Интерьер: Студия D · Репетиции" width="800" height="533" loading="lazy"><span class="room-tag">Репетиции</span><span class="room-number">04</span>
+                </div>
+                <div class="room-body">
+                  <h2>
+                    Студия D · Репетиции
+                  </h2>
+                  <div class="room-meta">
+                    <span><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 12h10m-5-5v10"/></svg>45 м²</span><span><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 21v-3a7 7 0 0 1 14 0v3M16 4a3 3 0 0 1 0 6M22 21v-3a7 7 0 0 0-5-6"/></svg>До 8 чел.</span>
+                  </div>
+                  <p class="room-description">
+                    Просторный зал для громких идей. Собирайте группу, разогревайтесь и играйте в полный звук.
+                  </p>
+                  <ul class="room-features" aria-label="Оснащение">
+                    <li>
+                      Ударная установка
+                    </li>
+                    <li>
+                      Комбоусилители
+                    </li>
+                    <li>
+                      Вокальная линия
+                    </li>
+                  </ul>
+                  <div class="room-book">
+                    <div>
+                      <strong>1 200 ₽</strong> <small>/ час</small>
+                    </div>
+                    <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#booking-modal" data-studio="d" aria-label="Забронировать: Студия D · Репетиции">Бронировать <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4 studio-item" data-purpose="recording" data-price="1500">
+              <article class="card room-card">
+                <div class="room-image-wrap">
+                  <img class="room-image" src="assets/images/studio-e.jpg" alt="Интерьер: Студия E · Акустика" width="800" height="533" loading="lazy"><span class="room-tag">Звукозапись</span><span class="room-number">05</span>
+                </div>
+                <div class="room-body">
+                  <h2>
+                    Студия E · Акустика
+                  </h2>
+                  <div class="room-meta">
+                    <span><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 12h10m-5-5v10"/></svg>28 м²</span><span><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 21v-3a7 7 0 0 1 14 0v3M16 4a3 3 0 0 1 0 6M22 21v-3a7 7 0 0 0-5-6"/></svg>До 4 чел.</span>
+                  </div>
+                  <p class="room-description">
+                    Камерное пространство для записи фортепиано, акустических инструментов и живого вокала.
+                  </p>
+                  <ul class="room-features" aria-label="Оснащение">
+                    <li>
+                      Фортепиано
+                    </li>
+                    <li>
+                      Стереопара
+                    </li>
+                    <li>
+                      Акустическая обработка
+                    </li>
+                  </ul>
+                  <div class="room-book">
+                    <div>
+                      <strong>1 500 ₽</strong> <small>/ час</small>
+                    </div>
+                    <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#booking-modal" data-studio="e" aria-label="Забронировать: Студия E · Акустика">Бронировать <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4 studio-item" data-purpose="rehearsal" data-price="700">
+              <article class="card room-card">
+                <div class="room-image-wrap">
+                  <img class="room-image" src="assets/images/studio-f.jpg" alt="Интерьер: Студия F · Соло" width="800" height="533" loading="lazy"><span class="room-tag">Репетиции</span><span class="room-number">06</span>
+                </div>
+                <div class="room-body">
+                  <h2>
+                    Студия F · Соло
+                  </h2>
+                  <div class="room-meta">
+                    <span><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 12h10m-5-5v10"/></svg>14 м²</span><span><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M2 21v-3a7 7 0 0 1 14 0v3M16 4a3 3 0 0 1 0 6M22 21v-3a7 7 0 0 0-5-6"/></svg>До 2 чел.</span>
+                  </div>
+                  <p class="room-description">
+                    Небольшая комната для индивидуальных занятий, подготовки к выступлению и поиска идей.
+                  </p>
+                  <ul class="room-features" aria-label="Оснащение">
+                    <li>
+                      Гитарный усилитель
+                    </li>
+                    <li>
+                      Метроном
+                    </li>
+                    <li>
+                      Пюпитры
+                    </li>
+                  </ul>
+                  <div class="room-book">
+                    <div>
+                      <strong>700 ₽</strong> <small>/ час</small>
+                    </div>
+                    <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#booking-modal" data-studio="f" aria-label="Забронировать: Студия F · Соло">Бронировать <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="empty-state" id="studio-empty" hidden>
+            <h3>
+              Пока нет подходящих студий
+            </h3>
+            <p>
+              Увеличьте бюджет или выберите другое назначение.
+            </p>
+            <button class="btn btn-outline-light" type="button" id="reset-studios">Сбросить фильтры</button>
+          </div>
+          <div class="help-strip">
+            <div>
+              <h3>
+                Не знаете, с чего начать?
+              </h3>
+              <p>
+                Посмотрите услуги и выберите подходящий формат работы.
+              </p>
+            </div>
+            <a class="btn btn-outline-light" href="services.html">Услуги и цены <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <p class="demo-note">
+            Это учебный каталог. Расписание и доступность помещений не проверяются; форма показывает пример бронирования.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a class="navbar-brand" href="index.html" aria-label="SoundSpace — главная"><svg class="icon brand-mark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4M7 5v14M11 2v20M15 7v10M19 4v16M23 10v4"/></svg>SOUNDSPACE<span class="accent" aria-hidden="true">.</span></a>
+            <p class="footer-description">
+              Пространство, в котором идеи<br>обретают своё звучание.
+            </p>
+          </div>
+          <nav class="footer-nav" aria-label="Навигация в подвале">
+            <a href="studios.html">Студии</a><a href="services.html">Услуги и цены</a><a href="equipment.html">Оборудование</a><a href="portfolio.html">Портфолио</a>
+          </nav>
+          <p class="footer-note">
+            Учебный проект. Бронирования и заявки демонстрационные.
+          </p>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 SoundSpace. Музыкальная студия.</span><span>Пчелкин Алексей · ЭФБО-11-25</span><a class="muted" href="#main">Наверх ↑</a>
+        </div>
+      </div>
+    </footer>
+    <div class="modal fade" id="booking-modal" tabindex="-1" aria-labelledby="booking-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="booking-title">
+              Бронирование студии
+            </h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <form id="booking-form" novalidate>
+              <p class="form-note">
+                Все поля обязательны. Учебная форма: данные не отправляются и не сохраняются.
+              </p>
+              <div class="mb-3">
+                <label class="form-label" for="booking-studio">Выбранная студия</label><input class="form-control" id="booking-studio" readonly>
+                <div class="form-text" id="booking-studio-info">
+                </div>
+              </div>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="booking-name">Ваше имя</label><input class="form-control" type="text" id="booking-name" name="booking-name" required autocomplete="name" maxlength="80" placeholder="Алексей" aria-describedby="booking-name-error">
+                  <div class="invalid-feedback" id="booking-name-error">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="booking-phone">Телефон</label><input class="form-control" type="tel" id="booking-phone" name="booking-phone" required autocomplete="tel" maxlength="24" placeholder="+7 (999) 123-45-67" aria-describedby="booking-phone-error">
+                  <div class="invalid-feedback" id="booking-phone-error">
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <label class="form-label" for="booking-email">Электронная почта</label><input class="form-control" type="email" id="booking-email" name="booking-email" required autocomplete="email" maxlength="120" placeholder="name@example.ru" aria-describedby="booking-email-error">
+                  <div class="invalid-feedback" id="booking-email-error">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="booking-guests">Количество гостей</label><input class="form-control" type="number" id="booking-guests" name="booking-guests" required min="1" step="1" value="1" aria-describedby="booking-guests-error">
+                  <div class="invalid-feedback" id="booking-guests-error">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="booking-date">Дата аренды</label><input class="form-control" type="date" id="booking-date" name="booking-date" required aria-describedby="booking-date-error">
+                  <div class="invalid-feedback" id="booking-date-error">
+                  </div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <label class="form-label" for="booking-start">Начало</label><input class="form-control" type="time" id="booking-start" name="booking-start" required min="09:00" max="22:00" step="1800" value="10:00" aria-describedby="booking-start-error">
+                  <div class="invalid-feedback" id="booking-start-error">
+                  </div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <label class="form-label" for="booking-end">Окончание</label><input class="form-control" type="time" id="booking-end" name="booking-end" required min="10:00" max="23:00" step="1800" value="12:00" aria-describedby="booking-end-error">
+                  <div class="invalid-feedback" id="booking-end-error">
+                  </div>
+                </div>
+              </div>
+              <p class="form-text mt-3">
+                Студия открыта с 09:00 до 23:00. Минимальная аренда — 1 час, шаг времени — 30 минут. Окончание в тот же день.
+              </p>
+              <div class="booking-summary" aria-live="polite" aria-atomic="true">
+                <div>
+                  <small>Стоимость аренды</small><strong id="booking-total">—</strong>
+                </div>
+                <div id="booking-breakdown">
+                  Выберите дату и время
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit">Подтвердить бронирование <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </form>
+            <div class="success-view" id="booking-success" hidden>
+              <div class="success-icon">
+                <svg class="icon icon-lg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L20 5"/></svg>
+              </div>
+              <h3 tabindex="-1">
+                Заявка сформирована
+              </h3>
+              <p>
+                Демонстрационное бронирование успешно.<br>Реального резервирования и отправки данных не происходит.
+              </p>
+              <p class="success-details" id="booking-success-details">
+              </p>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Готово</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <noscript>
+    <p class="container demo-note">
+      Включите JavaScript для работы фильтров, вкладок, каруселей, форм и модальных окон.
+    </p>
+    </noscript>
+  </body>
+</html>
