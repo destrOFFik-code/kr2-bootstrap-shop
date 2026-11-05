@@ -1,4 +1,4 @@
-/* Общие стили учебного проекта SoundSpace. Сетка и компоненты — Bootstrap. */
+/* Общие стили сайта SoundSpace. Сетка и компоненты — Bootstrap. */
 :root {
   --bg:#101013;
   --panel:#19191e;
@@ -310,7 +310,7 @@ main:focus {
   color:#93909d;
   max-width:235px;
 }
-.demo-note {
+.site-note {
   font-size:.76rem;
   color:var(--muted);
   border-left:2px solid var(--accent);

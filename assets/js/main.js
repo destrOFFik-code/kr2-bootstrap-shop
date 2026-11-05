@@ -250,7 +250,7 @@
         form.querySelector('.is-invalid')?.focus();
         return;
       }
-      byId('request-success-details').textContent = 'Выбрано: ' + byId('request-service').value + '\nСтатус: демонстрационная заявка';
+      byId('request-success-details').textContent = 'Выбрано: ' + byId('request-service').value + '\nСтатус: подготовлена к согласованию';
       form.hidden = true;
       byId('request-success').hidden = false;
       byId('request-success').querySelector('h3').focus();
@@ -258,7 +258,7 @@
     requestModal.addEventListener('hidden.bs.modal', () => form.reset());
   }
 
-  // Одновременно играет один демофрагмент, чтобы записи не перекрывали друг друга.
+  // Одновременно играет один аудиофрагмент, чтобы записи не перекрывали друг друга.
   document.querySelectorAll('audio').forEach(player => {
     player.addEventListener('play', () => {
       document.querySelectorAll('audio').forEach(other => { if (other !== player) other.pause(); });
