@@ -206,7 +206,7 @@ main:focus {
 .skip-link:focus {
   transform:translateY(0);
 }
-/* Навигация и подвал одинаковы на пяти страницах. */
+/* Общая навигация и подвал. */
 .site-header {
   border-bottom:1px solid #ffffff12;
   background:#101013f5;
@@ -227,7 +227,7 @@ main:focus {
   font-size:1.17rem;
   font-weight:750;
   letter-spacing:-.055em;
-  margin-right:48px;
+  margin-right:32px;
 }
 .navbar-brand:hover {
   color:var(--accent);
@@ -240,7 +240,7 @@ main:focus {
 .nav-link {
   font-size:.8rem;
   color:#b6b2c0;
-  padding:.65rem .85rem!important;
+  padding:.65rem .7rem!important;
   position:relative;
 }
 .nav-link:hover,.nav-link:focus {
@@ -252,7 +252,7 @@ main:focus {
 .navbar-nav .nav-link.active:after {
   content:"";
   position:absolute;
-  left:.85rem;
+  left:.7rem;
   bottom:2px;
   width:18px;
   height:2px;
@@ -263,13 +263,27 @@ main:focus {
   padding:8px 10px;
   color:#fff;
 }
-.nav-book {
+.nav-actions {
+  display:flex;
+  align-items:center;
+  gap:18px;
   margin-left:auto;
+}
+.nav-phone {
+  color:var(--text);
+  font-size:.78rem;
+  white-space:nowrap;
+}
+.nav-phone:hover {
+  color:var(--accent);
+}
+.nav-book {
   font-size:.78rem;
   min-height:42px;
+  white-space:nowrap;
 }
 .site-footer {
-  padding:36px 0 20px;
+  padding:48px 0 24px;
   border-top:1px solid var(--line);
   font-size:.75rem;
   line-height:1.6;
@@ -277,47 +291,57 @@ main:focus {
 }
 .footer-top {
   display:grid;
-  grid-template-columns:minmax(0,1.15fr) minmax(0,.7fr) minmax(0,1fr) minmax(0,1.15fr);
-  gap:28px;
-  margin-bottom:30px;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:start;
+  gap:clamp(24px,4vw,56px);
+  margin-bottom:36px;
+}
+.footer-brand {
+  max-width:260px;
 }
 .footer-brand .navbar-brand {
   margin-right:0;
-  font-size:.95rem;
-  color:#b6b2c0;
+  padding:0;
+  font-size:1rem;
 }
 .footer-brand .brand-mark {
   width:24px;
   height:24px;
 }
 .footer-description {
-  max-width:270px;
   font-size:.75rem;
-  margin:12px 0 0;
+  line-height:1.8;
+  margin:16px 0 0;
+}
+.footer-nav {
+  justify-self:center;
+  text-align:left;
+}
+.footer-contact-column {
+  justify-self:end;
+  text-align:left;
 }
 .footer-book {
   margin-top:16px;
-  min-height:36px;
-  padding:8px 12px;
+  min-height:40px;
+  padding:9px 16px;
   font-size:.75rem;
-  font-weight:400;
-  --bs-btn-color:var(--muted);
 }
 .site-footer .footer-heading {
-  font-size:.75rem;
+  font-size:.6875rem;
   font-weight:600;
-  letter-spacing:.06em;
+  letter-spacing:.12em;
   line-height:1.4;
   text-transform:uppercase;
-  color:#b6b2c0;
-  margin:2px 0 14px;
+  color:var(--text);
+  margin:3px 0 18px;
 }
-.footer-links,.footer-services {
+.footer-links {
   list-style:none;
   padding:0;
   margin:0;
   display:grid;
-  gap:7px;
+  gap:8px;
   font-size:.75rem;
   color:var(--muted);
 }
@@ -327,15 +351,6 @@ main:focus {
 }
 .footer-links a:hover,.footer-contacts a:hover {
   color:var(--text);
-}
-.footer-accent-link {
-  display:inline-block;
-  font-size:.75rem;
-  margin-top:14px;
-  color:var(--muted);
-}
-.footer-accent-link:hover {
-  color:#d3bfff;
 }
 .footer-contacts {
   display:grid;
@@ -349,24 +364,35 @@ main:focus {
   font-size:.75rem;
 }
 .footer-contacts .footer-phone {
-  color:var(--muted);
-  font-size:.75rem;
-  margin-top:2px;
+  color:var(--text);
+  font-size:1rem;
+  font-weight:600;
+  letter-spacing:.02em;
+  margin-top:6px;
+}
+.footer-contacts .footer-phone:hover {
+  color:var(--accent);
 }
 .footer-bottom {
-  padding-top:18px;
+  padding-top:20px;
   border-top:1px solid var(--line);
-  display:flex;
-  justify-content:space-between;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:center;
   gap:15px;
   color:#93909d;
   font-size:.6875rem;
 }
-.footer-note {
-  font-size:.6875rem;
-  color:#93909d;
-  max-width:235px;
-  margin:12px 0 0;
+.footer-bottom > a {
+  grid-column:3;
+  justify-self:end;
+}
+.footer-copyright {
+  grid-column:2;
+  text-align:center;
+}
+.footer-bottom > a:hover {
+  color:var(--accent);
 }
 .site-note {
   font-size:.76rem;
@@ -679,6 +705,26 @@ main:focus {
 .contact-details .contact-group+.contact-group {
   margin-top:22px;
 }
+.contact-info .small-label {
+  display:block;
+  color:var(--accent);
+  margin-bottom:12px;
+}
+.contact-info p {
+  margin:0;
+  font-size:.9rem;
+}
+.contact-info a {
+  color:var(--text);
+  overflow-wrap:anywhere;
+}
+.contact-info a:hover {
+  color:var(--accent);
+}
+.contact-info .contact-phone {
+  font-size:1.1rem;
+  font-weight:600;
+}
 .contact-map {
   margin-top:40px;
   padding-top:32px;
@@ -691,7 +737,8 @@ main:focus {
   gap:24px;
   margin-bottom:22px;
 }
-.contact-map-heading h3 {
+.contact-map-heading h2 {
+  font-size:1.5rem;
   margin:12px 0 10px;
 }
 .contact-map-heading p {
@@ -950,6 +997,10 @@ main:focus {
 .service-full .service-icon {
   margin-bottom:30px;
 }
+.service-full .service-icon .icon {
+  width:33px;
+  height:33px;
+}
 .service-full {
   display:flex;
   flex-direction:column;
@@ -1138,7 +1189,7 @@ main:focus {
   text-transform:uppercase;
   margin-bottom:14px;
 }
-.portfolio-body h2 {
+.portfolio-body h3 {
   font-size:1.55rem;
   margin-bottom:5px;
 }
@@ -1361,15 +1412,6 @@ main:focus {
   .nav-book {
     padding:10px 14px;
   }
-  .hero h1 {
-    font-size:5rem;
-  }
-  .hero-caption {
-    right:28px;
-    bottom:32px;
-  }
-}
-@media(max-width:991px) {
   .navbar {
     min-height:76px;
   }
@@ -1384,9 +1426,20 @@ main:focus {
     left:0;
     bottom:6px;
   }
-  .nav-book {
-    margin:16px 0 0;
+  .nav-actions {
+    margin:18px 0 0;
+    flex-wrap:wrap;
+    gap:14px 18px;
   }
+  .hero h1 {
+    font-size:5rem;
+  }
+  .hero-caption {
+    right:28px;
+    bottom:32px;
+  }
+}
+@media(max-width:991px) {
   .section {
     padding:75px 0;
   }
@@ -1418,13 +1471,6 @@ main:focus {
   .about-copy {
     max-width:none;
     margin-bottom:35px;
-  }
-  .footer-top {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:28px;
-  }
-  .footer-note {
-    max-width:none;
   }
   .room-image {
     height:260px;
@@ -1512,8 +1558,17 @@ main:focus {
     margin-top:12px;
   }
   .footer-top {
-    margin-bottom:24px;
-    gap:24px;
+    grid-template-columns:minmax(0,1fr);
+    justify-items:start;
+    text-align:left;
+    margin-bottom:30px;
+    gap:32px;
+  }
+  .footer-brand {
+    max-width:320px;
+  }
+  .footer-nav,.footer-contact-column {
+    justify-self:start;
   }
   .contact-map-heading {
     flex-direction:column;
@@ -1524,8 +1579,16 @@ main:focus {
     height:320px;
   }
   .footer-bottom {
-    flex-direction:column;
-    font-size:.69rem;
+    grid-template-columns:minmax(0,1fr);
+    justify-items:center;
+    gap:12px;
+  }
+  .footer-copyright {
+    grid-column:1;
+  }
+  .footer-bottom > a {
+    grid-column:1;
+    justify-self:center;
   }
   .page-heading h1 {
     font-size:2.9rem;
@@ -1589,12 +1652,6 @@ main:focus {
   }
   .booking-summary strong {
     font-size:1.8rem;
-  }
-}
-@media(max-width:575px) {
-  .footer-top {
-    grid-template-columns:minmax(0,1fr);
-    gap:24px;
   }
 }
 @media(prefers-reduced-motion:reduce) {

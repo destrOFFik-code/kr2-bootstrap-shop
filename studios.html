@@ -8,7 +8,7 @@
     <title>Студии — SoundSpace</title>
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/style.css?v=27872a286f7d">
+    <link rel="stylesheet" href="assets/css/style.css?v=dfc9f2181a39">
     <script src="assets/vendor/bootstrap/bootstrap.bundle.js" defer></script>
     <script src="assets/js/data.js" defer></script>
     <script src="assets/js/main.js" defer></script>
@@ -16,7 +16,7 @@
   <body>
     <a class="skip-link" href="#main">Перейти к содержимому</a>
     <header class="site-header">
-      <nav class="navbar navbar-expand-lg" aria-label="Главная навигация">
+      <nav class="navbar navbar-expand-xl" aria-label="Главная навигация">
         <div class="container">
           <a class="navbar-brand" href="index.html" aria-label="SoundSpace — главная"><svg class="icon brand-mark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4M7 5v14M11 2v20M15 7v10M19 4v16M23 10v4"/></svg>SOUNDSPACE<span class="accent" aria-hidden="true">.</span></a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
@@ -35,10 +35,13 @@
                 <a class="nav-link "  href="equipment.html">Оборудование</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link "  href="portfolio.html">Портфолио</a>
+                <a class="nav-link" href="contacts.html">Контакты</a>
               </li>
             </ul>
-            <a class="btn btn-outline-light nav-book" href="studios.html#studios">Забронировать <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+            <div class="nav-actions">
+              <a class="nav-phone" href="tel:+79001234567">+7(900)123-45-67</a>
+              <a class="btn btn-outline-light nav-book" href="studios.html#studios">Выбрать студию <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+            </div>
           </div>
         </div>
       </nav>
@@ -345,44 +348,28 @@
             <p class="footer-description">
               Пространство, в котором идеи обретают своё звучание. От первого дубля до готового релиза.
             </p>
-            <a class="btn btn-outline-light btn-sm footer-book" href="studios.html#studios">Выбрать студию →</a>
           </div>
-          <nav class="footer-column" aria-label="Навигация в подвале">
+          <nav class="footer-column footer-nav" aria-label="Навигация в подвале">
             <h2 class="footer-heading">Навигация</h2>
             <ul class="footer-links">
-              <li><a href="index.html">Главная</a></li>
               <li><a href="studios.html">Студии</a></li>
               <li><a href="services.html">Услуги и цены</a></li>
               <li><a href="equipment.html">Оборудование</a></li>
-              <li><a href="portfolio.html">Портфолио</a></li>
-              <li><a href="index.html#contacts">Контакты и карта</a></li>
             </ul>
           </nav>
-          <div class="footer-column">
-            <h2 class="footer-heading">Что записываем</h2>
-            <ul class="footer-services">
-              <li>Вокал и инструменты</li>
-              <li>Подкасты и разговорные шоу</li>
-              <li>Сведение и мастеринг</li>
-              <li>Репетиции и продакшен</li>
-            </ul>
-            <a class="footer-accent-link" href="services.html#packages">Пакетные тарифы →</a>
-            <p class="footer-note">Аренда от 1 часа.<br>Оборудование включено в стоимость.</p>
-          </div>
-          <div class="footer-column">
+          <div class="footer-column footer-contact-column">
             <h2 class="footer-heading">На связи</h2>
             <address class="footer-contacts">
-              <a href="index.html#studio-map">Москва, ул. Музыкальная, 12</a>
+              <a href="contacts.html#studio-map">Москва, ул. Музыкальная, 12</a>
+              <a class="footer-phone" href="tel:+79001234567">+7(900)123-45-67</a>
               <span class="footer-hours">Ежедневно · 09:00–23:00</span>
-              <a class="footer-phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
               <a href="mailto:hello@soundspace.example">hello@soundspace.example</a>
             </address>
-            <a class="footer-accent-link" href="https://yandex.ru/maps/?mode=search&amp;text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D1%83%D0%BB.%20%D0%9C%D1%83%D0%B7%D1%8B%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%2C%2012" target="_blank" rel="noopener noreferrer">Открыть Яндекс Карты ↗</a>
-            <p class="footer-note">Запись и репетиции — по предварительному согласованию.</p>
+            <a class="btn btn-outline-light btn-sm footer-book" href="studios.html#studios">Выбрать студию →</a>
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© 2026 SoundSpace. Музыкальная студия.</span><span>Пчелкин Алексей</span><a class="muted" href="#main">Наверх ↑</a>
+          <span class="footer-copyright">© 2026 SoundSpace. Все права защищены</span><a class="muted" href="#main">Наверх ↑</a>
         </div>
       </div>
     </footer>
