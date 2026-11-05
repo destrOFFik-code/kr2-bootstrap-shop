@@ -430,6 +430,9 @@ main:focus {
   color:var(--muted);
 }
 .studio-carousel {
+  --bs-carousel-caption-color:#fff;
+  --bs-carousel-indicator-active-bg:#fff;
+  --bs-carousel-control-icon-filter:none;
   border-radius:8px;
   overflow:hidden;
   position:relative;
