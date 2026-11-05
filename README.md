@@ -51,7 +51,7 @@ SoundSpace/
     │   ├── data.js                    — данные студий и оборудования
     │   └── main.js                    — интерактивность и проверка форм
     ├── images/                       — фотографии и значок сайта
-    ├── audio/                        — локальные аудиопревью и исходные демофрагменты
+    ├── audio/                        — три локальных аудиопревью
     └── vendor/
         └── bootstrap/
             ├── bootstrap.css
@@ -108,11 +108,11 @@ SoundSpace/
 
 В портфолио находятся три локальных аудиопревью длительностью по 30 секунд в формате M4A (AAC), полученные из официального каталога Apple Music / iTunes:
 
-1. [Travis Scott — goosebumps](https://music.apple.com/us/album/goosebumps/1151481435?i=1151481750) — `assets/audio/travis-scott-goosebumps.m4a`.
-2. [Travis Scott — MY EYES](https://music.apple.com/us/album/my-eyes/1708274558?i=1708274776) — `assets/audio/travis-scott-my-eyes.m4a`.
-3. [A$AP Rocky feat. reggie & Jeremih — Shroom Clouds](https://music.apple.com/us/album/shroom-clouds-feat-reggie-jeremih/6823385914?i=6823385920) — `assets/audio/asap-rocky-shroom-clouds.m4a`.
+1. Travis Scott — goosebumps — `assets/audio/travis-scott-goosebumps.m4a`.
+2. Travis Scott — MY EYES — `assets/audio/travis-scott-my-eyes.m4a`.
+3. A$AP Rocky feat. reggie & Jeremih — Shroom Clouds — `assets/audio/asap-rocky-shroom-clouds.m4a`.
 
-Превью работают без интернета. Для перехода к полным трекам по ссылкам в карточках нужен интернет. Используются стандартные средства браузера: воспроизведение, пауза, перемотка и громкость. При запуске следующего фрагмента предыдущий автоматически приостанавливается. Исходные синтезированные файлы `demo-1.wav`, `demo-2.wav` и `demo-3.wav` сохранены в папке, но на странице не используются.
+Превью работают без интернета. Используются стандартные средства браузера: воспроизведение, пауза, перемотка и громкость. При запуске следующего фрагмента предыдущий автоматически приостанавливается.
 
 ## Адаптивность и доступность
 
