@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Крутите колесо SoundSpace и получите бонус от 5 до 25% на предварительный расчёт аренды студии.">
+    <meta name="theme-color" content="#101013">
+    <title>Колесо скидок — SoundSpace</title>
+    <script src="assets/js/local-auth.js"></script>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=soundspace-features-1">
+    <link rel="stylesheet" href="assets/css/features.css">
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.js" defer></script>
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/auth.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-xxl" aria-label="Главная навигация">
+        <div class="container">
+          <a class="navbar-brand" href="index.html" aria-label="SoundSpace — главная"><svg class="icon brand-mark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4M7 5v14M11 2v20M15 7v10M19 4v16M23 10v4"/></svg>SOUNDSPACE<span class="accent" aria-hidden="true"></span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню"><svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+          <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="studios.html">Студии</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="services.html">Услуги и цены</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="equipment.html">Оборудование</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacts.html">Контакты</a>
+              </li>
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="wheel.html">Колесо скидок</a></li>
+            </ul>
+            <div class="nav-actions">
+              <a class="nav-account" data-account-link href="auth.html">Войти</a>
+              <a class="nav-phone" href="tel:+79001234567">+7(900)123-45-67</a>
+              <a class="btn btn-outline-light nav-book" href="studios.html#studios">Выбрать студию <svg class="icon " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="wheel-section section">
+        <div class="container">
+          <nav aria-label="Хлебные крошки"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Главная</a></li><li class="breadcrumb-item active" aria-current="page">Колесо скидок</li></ol></nav>
+          <div class="wheel-layout">
+            <div class="wheel-copy">
+              <div class="eyebrow">SoundSpace / твой счастливый дубль</div>
+              <h1>Поймай свой<br><span class="accent">ритм выгоды.</span></h1>
+              <p class="lead-copy">Немного удачи — и больше музыки.<br>Крути колесо и получи от 5 до 25%<br>на аренду студии.</p>
+              <div class="wheel-tags"><span>Без проигрыша</span><span>Одна попытка в день</span></div>
+              <button class="btn btn-primary spin-button" id="spin-button" type="button">Крутить колесо →</button>
+              <p class="wheel-status" id="wheel-status" role="status" aria-live="polite">Одна попытка в день. Каждый сектор — скидка.</p>
+              <section class="reward-card" id="wheel-result" aria-labelledby="reward-title" hidden>
+                <div class="reward-top"><div><span class="small-label">Ваш бонус сегодня</span><h2 id="reward-title" tabindex="-1">Музыка стала ближе.</h2></div><strong id="reward-percent">—</strong></div>
+                <div class="coupon-row"><code id="reward-code"></code><button class="text-button" id="copy-reward" type="button">Скопировать</button></div>
+                <a class="btn btn-outline-light w-100" href="studios.html">Применить к расчёту аренды →</a>
+              </section>
+            </div>
+            <div class="wheel-stage">
+              <div class="wheel-stage-caption"><span>TURN UP YOUR LUCK</span><span>VOL. 01</span></div>
+              <div class="wheel-wrap">
+                <div class="wheel-pointer" aria-hidden="true"></div>
+                <div class="discount-wheel" id="discount-wheel" role="img" aria-label="Восемь секторов со скидками от 5 до 25 процентов" aria-busy="false"><span class="wheel-label" style="--segment:0"><span>5%</span></span><span class="wheel-label" style="--segment:1"><span>10%</span></span><span class="wheel-label" style="--segment:2"><span>15%</span></span><span class="wheel-label" style="--segment:3"><span>20%</span></span><span class="wheel-label" style="--segment:4"><span>25%</span></span><span class="wheel-label" style="--segment:5"><span>10%</span></span><span class="wheel-label" style="--segment:6"><span>15%</span></span><span class="wheel-label" style="--segment:7"><span>5%</span></span></div>
+                <div class="wheel-hub" aria-hidden="true"><strong>SS</strong><span>GOOD LUCK</span></div>
+              </div>
+              <div class="wheel-stage-bottom"><span class="status-dot"></span> Каждый поворот — новый повод творить.</div>
+            </div>
+          </div>
+          <div class="wheel-rules"><div><span class="small-label accent">Как это работает</span><h2>Крути. Сохраняй. Звучи.</h2></div><ol><li><span>01</span><div><strong>Сделай один поворот</strong><p>Одна попытка в день в этом браузере. Вращение бесплатное.</p></div></li><li><span>02</span><div><strong>Сохрани свой промокод</strong><p>Бонус действует до конца сегодняшнего дня и учитывается в расчёте аренды.</p></div></li><li><span>03</span><div><strong>Выбери своё пространство</strong><p>Сообщи промокод студии. Демонстрационная акция: скидка требует подтверждения и не суммируется с другими предложениями.</p></div></li></ol></div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a class="navbar-brand" href="index.html" aria-label="SoundSpace — главная"><svg class="icon brand-mark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4M7 5v14M11 2v20M15 7v10M19 4v16M23 10v4"/></svg>SOUNDSPACE<span class="accent" aria-hidden="true"></span></a>
+            <p class="footer-description">
+              Пространство, в котором идеи обретают своё звучание. От первого дубля до готового релиза.
+            </p>
+          </div>
+          <nav class="footer-column footer-nav" aria-label="Навигация в подвале">
+            <h2 class="footer-heading">Навигация</h2>
+            <ul class="footer-links">
+              <li><a href="studios.html">Студии</a></li>
+              <li><a href="services.html">Услуги и цены</a></li>
+              <li><a href="equipment.html">Оборудование</a></li>
+              <li><a href="wheel.html">Колесо скидок</a></li>
+              <li><a href="auth.html" data-account-link>Войти</a></li>
+            </ul>
+          </nav>
+          <div class="footer-column footer-contact-column">
+            <h2 class="footer-heading">На связи</h2>
+            <address class="footer-contacts">
+              <a href="contacts.html#studio-map">Москва, ул. Музыкальная, 12</a>
+              <a class="footer-phone" href="tel:+79001234567">+7(900)123-45-67</a>
+              <span class="footer-hours">Ежедневно · 09:00–23:00</span>
+              <a href="mailto:hello@soundspace.example">hello@soundspace.example</a>
+            </address>
+            <a class="btn btn-outline-light btn-sm footer-book" href="studios.html#studios">Выбрать студию →</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span class="footer-copyright">© 2026 SoundSpace. Все права защищены</span><a class="muted" href="#main">Наверх ↑</a>
+        </div>
+      </div>
+          <p class="music-attribution container">Фоновая музыка: <a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1300046" target="_blank" rel="noopener noreferrer">«Dream Culture» — Kevin MacLeod</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Запись без изменений, воспроизведение в цикле.</p>
+    </footer>
+    <aside class="music-dock" aria-label="Фоновая музыка">
+      <div class="music-equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="music-info"><span>НА СВОЕЙ ВОЛНЕ</span><small id="music-status" role="status">Музыка для настроения</small></div>
+      <button type="button" id="music-toggle" class="music-toggle" aria-pressed="false" aria-controls="background-music"><span data-music-label>Включить</span></button>
+      <label class="music-volume-label" for="music-volume"><span class="visually-hidden">Громкость фоновой музыки</span><input id="music-volume" type="range" min="0" max="100" value="20" aria-label="Громкость фоновой музыки"></label>
+      <audio id="background-music" preload="none" loop><source src="assets/audio/kevin-macleod-dream-culture.mp3" type="audio/mpeg"></audio>
+    </aside>
+    <noscript><p class="container site-note">Включите JavaScript для входа, регистрации и колеса скидок.</p></noscript>
+    <script src="assets/js/wheel.js" defer></script>
+  </body>
+</html>

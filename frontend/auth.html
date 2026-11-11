@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Войдите или создайте аккаунт SoundSpace с помощью почты и пароля.">
+    <meta name="theme-color" content="#101013">
+    <title>Вход и регистрация — SoundSpace</title>
+    <script src="assets/js/local-auth.js"></script>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=soundspace-features-1">
+    <link rel="stylesheet" href="assets/css/features.css">
+    <script src="assets/vendor/bootstrap/bootstrap.bundle.js" defer></script>
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/auth.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body class="auth-page">
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <header class="site-header"><nav class="navbar" aria-label="Вход в SoundSpace"><div class="container"><a class="navbar-brand" href="index.html" aria-label="SoundSpace — главная"><svg class="icon brand-mark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4M7 5v14M11 2v20M15 7v10M19 4v16M23 10v4"/></svg>SOUNDSPACE<span class="accent" aria-hidden="true"></span></a><span class="auth-header-caption">Твоё пространство начинается здесь</span></div></nav></header>
+    <main id="main" tabindex="-1">
+      <section class="account-section section">
+        <div class="container">
+          
+          <a class="account-back" href="index.html">← На главную</a>
+          <div class="account-layout">
+            <div class="account-intro">
+              <div class="eyebrow">SoundSpace / на одной волне</div>
+              <h1>Твой звук.<br>Твой <span class="accent">аккаунт.</span></h1>
+              <p class="lead-copy">Твой локальный аккаунт SoundSpace.<br>Войди или зарегистрируйся на этом устройстве.</p>
+              <div class="account-art" aria-hidden="true"><div class="vinyl-record"><span>SS<span>33⅓ RPM</span></span></div><span class="record-caption">GOOD MUSIC.<br>GOOD COMPANY.</span></div>
+              <p class="account-entry-note">Один клиентский аккаунт, без ролей. Сайт можно смотреть без входа.</p>
+            </div>
+            <div class="account-card">
+              <div id="auth-panel">
+                <div class="auth-tabs" role="group" aria-label="Вход или регистрация"><button type="button" data-auth-mode="login" aria-pressed="true" class="active">Вход</button><button type="button" data-auth-mode="register" aria-pressed="false">Регистрация</button></div>
+                <h2 id="auth-form-title">С возвращением</h2>
+                <p class="form-note">Только почта и пароль. И можно продолжать.</p>
+                <form id="auth-form">
+                  <div class="mb-4"><label class="form-label" for="auth-email">Электронная почта</label><input class="form-control" id="auth-email" name="email" type="email" required maxlength="100" autocomplete="email" placeholder="you@example.com"></div>
+                  <div class="mb-3"><label class="form-label" for="auth-password">Пароль</label><div class="password-field"><input class="form-control" id="auth-password" name="password" type="password" required maxlength="256" autocomplete="current-password" aria-describedby="password-hint"><button id="password-toggle" type="button" aria-controls="auth-password" aria-pressed="false">Показать</button></div><div class="form-text" id="password-hint">Для нового аккаунта: от 8 до 128 символов.</div></div>
+                  <div class="mb-4" id="confirm-field" hidden><label class="form-label" for="auth-confirm">Повторите пароль</label><input class="form-control" id="auth-confirm" name="confirm" type="password" maxlength="256" autocomplete="new-password" placeholder="Ещё раз, без опечаток"></div>
+                  <p class="auth-feedback" id="auth-feedback" role="alert" hidden></p>
+                  <button class="btn btn-primary w-100 mt-3" type="submit" id="auth-submit">Войти →</button>
+                </form>
+                <p class="local-account-note">Учебный аккаунт сохраняется только в этом браузере. Не используйте пароль от других сервисов. После очистки данных сайта аккаунт будет удалён.</p>
+              </div>
+              <div id="account-view" class="account-success" hidden>
+                <span class="account-check" aria-hidden="true">✓</span><div class="eyebrow">Вы на своей волне</div>
+                <h2 id="account-heading" tabindex="-1">Рады видеть!</h2><p id="account-email"></p>
+                <a class="btn btn-primary w-100" href="wheel.html">К колесу скидок →</a>
+                <a class="btn btn-outline-light w-100 mt-3" href="studios.html">Выбрать студию</a>
+                <button class="text-button mt-4" type="button" id="logout-button">Выйти из аккаунта</button>
+              </div>
+              <div class="card-signoff"><span class="status-dot"></span> Твоё пространство для музыки <span>SS / 01</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer auth-footer"><div class="container"><span>© 2026 SoundSpace. Все права защищены</span></div>      <p class="music-attribution container">Фоновая музыка: <a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1300046" target="_blank" rel="noopener noreferrer">«Dream Culture» — Kevin MacLeod</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Запись без изменений, воспроизведение в цикле.</p>
+    </footer>
+    <aside class="music-dock" aria-label="Фоновая музыка">
+      <div class="music-equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="music-info"><span>НА СВОЕЙ ВОЛНЕ</span><small id="music-status" role="status">Музыка для настроения</small></div>
+      <button type="button" id="music-toggle" class="music-toggle" aria-pressed="false" aria-controls="background-music"><span data-music-label>Включить</span></button>
+      <label class="music-volume-label" for="music-volume"><span class="visually-hidden">Громкость фоновой музыки</span><input id="music-volume" type="range" min="0" max="100" value="20" aria-label="Громкость фоновой музыки"></label>
+      <audio id="background-music" preload="none" loop><source src="assets/audio/kevin-macleod-dream-culture.mp3" type="audio/mpeg"></audio>
+    </aside>
+    <noscript><p class="container site-note">Включите JavaScript для входа, регистрации и колеса скидок.</p></noscript>
+  </body>
+</html>

@@ -170,12 +170,14 @@
       }
       // Цена зависит от помещения и длительности. При ошибках в параметрах аренды цена скрыта.
       const parametersValid = selected && ['date', 'start', 'end', 'guests'].every(key => !errors['booking-' + key]);
-      const total = parametersValid ? selected.price * duration : null;
+      const reward = window.SoundSpaceRewards?.get();
+      const subtotal = parametersValid ? selected.price * duration : null;
+      const total = subtotal === null ? null : Math.round(subtotal * (1 - (reward?.percent || 0) / 100));
       byId('booking-total').textContent = total === null ? '—' : money(total);
       byId('booking-breakdown').textContent = total === null
         ? 'Выберите корректные дату, время и число гостей'
-        : `${money(selected.price)} × ${new Intl.NumberFormat('ru-RU').format(duration)} ч`;
-      return {errors, total, duration, visitors};
+        : `${money(selected.price)} × ${new Intl.NumberFormat('ru-RU').format(duration)} ч${reward ? ` · −${reward.percent}% по коду ${reward.code}. Скидку подтверждает студия.` : ''}`;
+      return {errors, total, duration, visitors, reward};
     }
 
     bookingModal.addEventListener('show.bs.modal', event => {
@@ -187,6 +189,8 @@
       byId('booking-success').hidden = true;
       byId('booking-success-details').textContent = '';
       byId('booking-studio').value = selected.name;
+      const user = window.SoundSpaceAuth?.session()?.user;
+      if (user) byId('booking-email').value = user.email;
       byId('booking-studio-info').textContent = money(selected.price) + ' / час · До ' + selected.capacity + ' чел.';
       guests.max = String(selected.capacity);
       date.min = todayString();
@@ -202,14 +206,14 @@
     form.addEventListener('submit', event => {
       event.preventDefault();
       submitted = true;
-      const {errors, total, duration, visitors} = evaluateBooking();
+      const {errors, total, duration, visitors, reward} = evaluateBooking();
       showErrors(form, errors);
       if (Object.values(errors).some(Boolean) || total === null) {
         form.querySelector('.is-invalid')?.focus();
         return;
       }
       const day = new Intl.DateTimeFormat('ru-RU', {day:'numeric', month:'long', year:'numeric'}).format(new Date(date.value + 'T12:00:00'));
-      byId('booking-success-details').textContent = `${selected.name}\n${day}\n${start.value}–${end.value} · ${new Intl.NumberFormat('ru-RU').format(duration)} ч\nГостей: ${visitors}\nИтого: ${money(total)}`;
+      byId('booking-success-details').textContent = `${selected.name}\n${day}\n${start.value}–${end.value} · ${new Intl.NumberFormat('ru-RU').format(duration)} ч\nГостей: ${visitors}\nПредварительно: ${money(total)}${reward ? `\nПромокод: ${reward.code} (−${reward.percent}%). Требует подтверждения студии.` : ''}`;
       form.hidden = true;
       byId('booking-success').hidden = false;
       byId('booking-success').querySelector('h3').focus();
