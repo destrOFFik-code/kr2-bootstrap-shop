@@ -61,9 +61,9 @@
               <div class="eyebrow">SoundSpace / твой счастливый дубль</div>
               <h1>Поймай свой<br><span class="accent">ритм выгоды.</span></h1>
               <p class="lead-copy">Немного удачи — и больше музыки.<br>Крути колесо и получи от 5 до 25%<br>на аренду студии.</p>
-              <div class="wheel-tags"><span>Без проигрыша</span><span>Одна попытка в день</span></div>
+              <div class="wheel-tags"><span>Без проигрыша</span><span>Без ограничений</span></div>
               <button class="btn btn-primary spin-button" id="spin-button" type="button">Крутить колесо →</button>
-              <p class="wheel-status" id="wheel-status" role="status" aria-live="polite">Одна попытка в день. Каждый сектор — скидка.</p>
+              <p class="wheel-status" id="wheel-status" role="status" aria-live="polite">Крути сколько хочешь. Каждый сектор — скидка.</p>
               <section class="reward-card" id="wheel-result" aria-labelledby="reward-title" hidden>
                 <div class="reward-top"><div><span class="small-label">Ваш бонус сегодня</span><h2 id="reward-title" tabindex="-1">Музыка стала ближе.</h2></div><strong id="reward-percent">—</strong></div>
                 <div class="coupon-row"><code id="reward-code"></code><button class="text-button" id="copy-reward" type="button">Скопировать</button></div>
@@ -80,7 +80,7 @@
               <div class="wheel-stage-bottom"><span class="status-dot"></span> Каждый поворот — новый повод творить.</div>
             </div>
           </div>
-          <div class="wheel-rules"><div><span class="small-label accent">Как это работает</span><h2>Крути. Сохраняй. Звучи.</h2></div><ol><li><span>01</span><div><strong>Сделай один поворот</strong><p>Одна попытка в день в этом браузере. Вращение бесплатное.</p></div></li><li><span>02</span><div><strong>Сохрани свой промокод</strong><p>Бонус действует до конца сегодняшнего дня и учитывается в расчёте аренды.</p></div></li><li><span>03</span><div><strong>Выбери своё пространство</strong><p>Сообщи промокод студии. Демонстрационная акция: скидка требует подтверждения и не суммируется с другими предложениями.</p></div></li></ol></div>
+          <div class="wheel-rules"><div><span class="small-label accent">Как это работает</span><h2>Крути. Сохраняй. Звучи.</h2></div><ol><li><span>01</span><div><strong>Крути сколько хочешь</strong><p>Количество попыток не ограничено. Вращение бесплатное.</p></div></li><li><span>02</span><div><strong>Сохрани свой промокод</strong><p>Последний выпавший бонус действует до конца сегодняшнего дня и учитывается в расчёте аренды.</p></div></li><li><span>03</span><div><strong>Выбери своё пространство</strong><p>Сообщи промокод студии. Демонстрационная акция: скидка требует подтверждения и не суммируется с другими предложениями.</p></div></li></ol></div>
         </div>
       </section>
     </main>
@@ -118,14 +118,14 @@
           <span class="footer-copyright">© 2026 SoundSpace. Все права защищены</span><a class="muted" href="#main">Наверх ↑</a>
         </div>
       </div>
-          <p class="music-attribution container">Фоновая музыка: <a href="https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1300046" target="_blank" rel="noopener noreferrer">«Dream Culture» — Kevin MacLeod</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Запись без изменений, воспроизведение в цикле.</p>
+          <p class="music-attribution container">Фоновая музыка: <a href="https://open.spotify.com/track/5SAlZmNvOHJb4XjnkNRkhR" target="_blank" rel="noopener noreferrer">«Баобаб» — Иван Золо (ivanzolo2004)</a>. Воспроизведение в цикле.</p>
     </footer>
     <aside class="music-dock" aria-label="Фоновая музыка">
       <div class="music-equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <div class="music-info"><span>НА СВОЕЙ ВОЛНЕ</span><small id="music-status" role="status">Музыка для настроения</small></div>
+      <div class="music-info"><span>НА СВОЕЙ ВОЛНЕ</span><small id="music-status" role="status">Баобаб · Иван Золо</small></div>
       <button type="button" id="music-toggle" class="music-toggle" aria-pressed="false" aria-controls="background-music"><span data-music-label>Включить</span></button>
       <label class="music-volume-label" for="music-volume"><span class="visually-hidden">Громкость фоновой музыки</span><input id="music-volume" type="range" min="0" max="100" value="20" aria-label="Громкость фоновой музыки"></label>
-      <audio id="background-music" preload="none" loop><source src="assets/audio/kevin-macleod-dream-culture.mp3" type="audio/mpeg"></audio>
+      <audio id="background-music" preload="none" loop><source src="assets/audio/ivan-zolo-baobab.mp3" type="audio/mpeg"></audio>
     </aside>
     <noscript><p class="container site-note">Включите JavaScript для входа, регистрации и колеса скидок.</p></noscript>
     <script src="assets/js/wheel.js" defer></script>

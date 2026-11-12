@@ -11,16 +11,19 @@
   const rewards = window.SoundSpaceRewards;
   let spinning = false;
   let dayTimer;
+  let rotation = 0;
 
   function showReward(reward, focus = false) {
     const index = Number.isInteger(reward.index) && prizes[reward.index] === reward.percent ? reward.index : prizes.indexOf(reward.percent);
-    wheel.style.transform = `rotate(${360 - (index * 45 + 22.5)}deg)`;
+    rotation = 360 - (index * 45 + 22.5);
+    wheel.style.transform = `rotate(${rotation}deg)`;
     document.getElementById('reward-percent').textContent = reward.percent + '%';
     document.getElementById('reward-code').textContent = reward.code;
     result.hidden = false;
-    button.disabled = true;
-    button.textContent = 'Ваш бонус уже получен';
-    feedback.textContent = 'Результат сохранён до конца дня. Следующее вращение — завтра.';
+    document.getElementById('copy-reward').textContent = 'Скопировать';
+    button.disabled = false;
+    button.textContent = 'Крутить ещё раз →';
+    feedback.textContent = 'Бонус сохранён до конца дня. Крути снова — новый результат заменит предыдущий.';
     if (focus) document.getElementById('reward-title').focus({preventScroll: true});
   }
   function refreshDay() {
@@ -31,7 +34,7 @@
       result.hidden = true;
       button.disabled = false;
       button.textContent = 'Крутить колесо →';
-      feedback.textContent = 'Одна попытка в день. Каждый сектор — скидка.';
+      feedback.textContent = 'Крути сколько хочешь. Каждый сектор — скидка.';
     }
     const tomorrow = new Date();
     tomorrow.setHours(24, 0, 0, 100);
@@ -43,40 +46,40 @@
 
   async function spin() {
     if (spinning) return;
-    const existing = rewards.get();
-    if (existing) { showReward(existing); return; }
     const random = crypto.getRandomValues(new Uint32Array(2));
     const index = random[0] % prizes.length;
     const reward = {day: rewards.today(), percent: prizes[index], index, code: `SS-${prizes[index]}-${random[1].toString(16).padStart(8, '0').slice(0, 6).toUpperCase()}`};
-    try {
-      // Store before animation so reloading cannot reroll the same attempt.
-      localStorage.setItem(rewards.key, JSON.stringify(reward));
-    } catch {
-      feedback.textContent = 'Разрешите хранение данных сайта в браузере, чтобы сохранить ваш бонус.';
-      return;
-    }
     spinning = true;
+    result.hidden = true;
     button.disabled = true;
     button.textContent = 'Ловим ваш бонус…';
     feedback.textContent = 'Колесо вращается. Пусть сегодня повезёт!';
     wheel.setAttribute('aria-busy', 'true');
-    const angle = 360 * 5 + 360 - (index * 45 + 22.5);
+    const target = 360 - (index * 45 + 22.5);
+    const angle = rotation + 360 * 5 + (target - rotation + 360) % 360;
     const duration = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 5200;
     wheel.style.transition = 'none';
-    wheel.style.transform = 'rotate(0deg)';
-    const animation = wheel.animate([{transform: 'rotate(0deg)'}, {transform: `rotate(${angle}deg)`}], {duration, easing: 'cubic-bezier(.12,.75,.12,1)', fill: 'forwards'});
-    try { await animation.finished; } catch { /* Still reveal a saved result if interrupted. */ }
+    const animation = wheel.animate([{transform: `rotate(${rotation}deg)`}, {transform: `rotate(${angle}deg)`}], {duration, easing: 'cubic-bezier(.12,.75,.12,1)', fill: 'forwards'});
+    try { await animation.finished; } catch { /* Reveal the result even if the animation is interrupted. */ }
     wheel.style.transform = `rotate(${angle}deg)`;
     animation.cancel();
     spinning = false;
     wheel.setAttribute('aria-busy', 'false');
-    if (reward.day === rewards.today()) showReward(reward, true);
-    else refreshDay();
+    if (reward.day !== rewards.today()) { refreshDay(); return; }
+    let saved = true;
+    try {
+      localStorage.setItem(rewards.key, JSON.stringify(reward));
+    } catch { saved = false; }
+    showReward(reward, true);
+    if (!saved) feedback.textContent = 'Можно крутить снова. Чтобы сохранить бонус для расчёта аренды, разрешите хранение данных сайта.';
   }
   button.addEventListener('click', () => {
-    // Web Locks serializes simultaneous spins across tabs where supported.
-    if (navigator.locks) navigator.locks.request('soundspace-wheel', spin).catch(() => { feedback.textContent = 'Не удалось запустить колесо. Попробуйте ещё раз.'; });
-    else spin().catch(() => { spinning = false; refreshDay(); });
+    spin().catch(() => {
+      spinning = false;
+      wheel.setAttribute('aria-busy', 'false');
+      refreshDay();
+      feedback.textContent = 'Не удалось запустить колесо. Попробуйте ещё раз.';
+    });
   });
   document.getElementById('copy-reward').addEventListener('click', async event => {
     try {

@@ -22,7 +22,7 @@
     const status = document.getElementById('music-status');
     let position = 0;
     try {
-      const saved = JSON.parse(sessionStorage.getItem('soundspace.music.v2'));
+      const saved = JSON.parse(sessionStorage.getItem('soundspace.music.v3'));
       if (saved && Number.isFinite(saved.volume)) volume.value = String(Math.min(100, Math.max(0, saved.volume)));
       if (saved && Number.isFinite(saved.position)) position = Math.max(0, saved.position);
     } catch { /* Defaults remain usable with storage disabled. */ }
@@ -31,13 +31,13 @@
       if (position < audio.duration) audio.currentTime = position;
     }, {once: true});
     const saveMusic = () => {
-      try { sessionStorage.setItem('soundspace.music.v2', JSON.stringify({position: audio.currentTime, volume: Number(volume.value)})); } catch { /* Optional preference. */ }
+      try { sessionStorage.setItem('soundspace.music.v3', JSON.stringify({position: audio.currentTime, volume: Number(volume.value)})); } catch { /* Optional preference. */ }
     };
     const render = () => {
       const playing = !audio.paused;
       toggle.setAttribute('aria-pressed', String(playing));
       toggle.querySelector('[data-music-label]').textContent = playing ? 'Пауза' : 'Включить';
-      status.textContent = playing ? 'Dream Culture · Kevin MacLeod' : 'Музыка для настроения';
+      status.textContent = 'Баобаб · Иван Золо';
       document.querySelector('.music-dock').classList.toggle('is-playing', playing);
     };
     toggle.addEventListener('click', async () => {
